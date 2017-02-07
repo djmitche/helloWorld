@@ -1,6 +1,6 @@
 version: 0
 metadata:
-  name: "TaskCluster GitHub Tests"
+  name: TaskCluster GitHub Tests
   description: "TaskCluster GitHub fooling around"
   owner: "{{ event.head.user.email }}"
   source: "{{ event.head.repo.url }}"
@@ -19,7 +19,7 @@ tasks:
       maxRunTime: 3600
       image: "node:5"
       command:
-        - "/bin/bash"
+        - /bin/bash
         - "--login"
         - "-c"
         - "git clone {{event.head.repo.url}} repo && cd repo && git checkout {{event.head.sha}} && npm install . && npm test"
